@@ -1,0 +1,29 @@
+###################
+### Frame Names ###
+###################
+
+tracker_frame: Root
+ptu_base_frame: ptu_pan_link
+ptu_pan_frame: ptu_tilt_link
+ptu_tilt_frame: ptu_tilted_link
+camera_frame: camera_left_frame
+
+
+###############################
+### FOB tracking ###
+###############################
+
+ptu_pub_topic: /ptu_driver/state_cmd
+ptu_sub_topic: /ptu_driver/state
+fob_sub_topic: /fob_objects
+fob_tracking_point_left: tracker_left_raw
+fob_tracking_point_right: tracker_right_raw
+
+
+###############################
+### Arrowkeys ###
+###############################
+
+panAmount: 5
+tiltAmount: 5
+
