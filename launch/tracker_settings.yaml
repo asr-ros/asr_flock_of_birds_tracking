@@ -13,8 +13,8 @@ camera_frame: camera_left_frame
 ### FOB tracking ###
 ###############################
 
-ptu_pub_topic: /ptu_driver/state_cmd
-ptu_sub_topic: /ptu_driver/state
+ptu_pub_topic: /asr_flir_ptu_driver/state_cmd
+ptu_sub_topic: /asr_flir_ptu_driver/state
 fob_sub_topic: /fob_objects
 fob_tracking_point_left: tracker_left_raw
 fob_tracking_point_right: tracker_right_raw

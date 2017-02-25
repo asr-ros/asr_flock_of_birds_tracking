@@ -101,7 +101,7 @@ public:
             nh.getParam("ptu_base_frame", ptu_frame);
 
             fob_sub = nh.subscribe(fob_topic, 1, &PTUTracker::fobCB, this);
-            ptu_sub = nh.subscribe("/ptu_driver/state", 1, &PTUTracker::ptuCB, this);
+            ptu_sub = nh.subscribe("/asr_flir_ptu_driver/state", 1, &PTUTracker::ptuCB, this);
             ptu_pub = nh.advertise<sensor_msgs::JointState>(ptu_state_cmd, 5);
 
             fobPoint.header.frame_id = fob_frame;
