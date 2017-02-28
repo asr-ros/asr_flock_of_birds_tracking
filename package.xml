@@ -2,7 +2,7 @@
 <package>
 	<name>asr_flock_of_birds_tracking</name>
 	<version>1.0.0</version>
-	<description>asr_flock_of_birds_tracking</description>
+	<description>This package tracks the motion of the Flock of Birds data glove and moves the PTU to follows it. With this tool, the data glove is always in the middle of the camera view.</description>
 	<author>Engelmann Stephan, Heller Florian, Meißner Pascal, Stöckle Patrick, Wittenbeck Valerij</author>
 	<maintainer email="asr-ros@lists.kit.edu">Meißner Pascal</maintainer>
 	<license>BSD</license>
