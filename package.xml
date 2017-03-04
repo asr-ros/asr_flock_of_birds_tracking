@@ -2,7 +2,8 @@
 <package>
 	<name>asr_flock_of_birds_tracking</name>
 	<version>1.0.0</version>
-	<description>This package tracks the motion of the Flock of Birds data glove and moves the PTU to follows it. With this tool, the data glove is always in the middle of the camera view.</description>
+	<description>This package provides a tool which tracks the motion of the Flock of Birds data glove and moves the PTU to follow it. With this tool, the data glove is always in the middle of the camera view and the manipulations of objects can be tracked easily.</description>
+        
 	<author>Engelmann Stephan, Heller Florian, Meißner Pascal, Stöckle Patrick, Wittenbeck Valerij</author>
 	<maintainer email="asr-ros@lists.kit.edu">Meißner Pascal</maintainer>
 	<license>BSD</license>
@@ -11,19 +12,17 @@
 	<build_depend>roscpp</build_depend>
 	<build_depend>asr_msgs</build_depend>
 	<build_depend>std_msgs</build_depend>
-	<build_depend>std_srvs</build_depend>
 	<build_depend>sensor_msgs</build_depend>
 	<build_depend>geometry_msgs</build_depend>
 	<build_depend>tf</build_depend>
-	<build_depend>opencv2</build_depend>
 
 	<run_depend>roscpp</run_depend>
 	<run_depend>asr_msgs</run_depend>
 	<run_depend>std_msgs</run_depend>
-	<run_depend>std_srvs</run_depend>
 	<run_depend>sensor_msgs</run_depend>
 	<run_depend>geometry_msgs</run_depend>
 	<run_depend>tf</run_depend>
-	<run_depend>opencv2</run_depend>
+        <run_depend>asr_flir_ptu_driver</run_depend>
+        <run_depend>asr_flock_of_birds</run_depend>
 
 </package>

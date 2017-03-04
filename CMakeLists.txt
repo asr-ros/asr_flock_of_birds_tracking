@@ -8,7 +8,6 @@ find_package(catkin REQUIRED COMPONENTS
 	roscpp
 	asr_msgs
 	std_msgs
-	std_srvs
 	sensor_msgs
 	geometry_msgs
 	tf
@@ -16,13 +15,12 @@ find_package(catkin REQUIRED COMPONENTS
 find_package(OpenCV REQUIRED )
 
 catkin_package(
-	CATKIN_DEPENDS roscpp asr_msgs std_msgs std_srvs sensor_msgs geometry_msgs tf
-	DEPENDS OpenCV
+	CATKIN_DEPENDS roscpp asr_msgs std_msgs sensor_msgs geometry_msgs tf
+	DEPENDS
 )
 
 include_directories(
 	${PROJECT_SOURCE_DIR}/include
-	${OpenCV_INCLUDE_DIRS}
 	${catkin_INCLUDE_DIRS}
 )
 
@@ -37,6 +35,5 @@ add_dependencies(${PROJECT_NAME} asr_msgs_generate_messages_cpp)
 
 
 target_link_libraries(${PROJECT_NAME}
-	${OpenCV_LIBRARIES}
 	${catkin_LIBRARIES}
 )
