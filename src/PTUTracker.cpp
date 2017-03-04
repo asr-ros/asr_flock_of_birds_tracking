@@ -19,7 +19,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include <asr_msgs/AsrObject.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <sensor_msgs/JointState.h>
-#include <cv.h>
 #include <string>
 #include <stdio.h>
 #include <iostream>
@@ -35,6 +34,13 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #define DEG_TO_RAD (1 / RAD_TO_DEG)
 
 class PTUTracker {
+    
+    struct Point3f{
+        float x, y, z;
+    };
+    struct Point2f{
+        float x, y;
+    };
 public:
         ros::NodeHandle nh;
 
@@ -118,13 +124,18 @@ public:
 
         }
 
-        cv::Point2f toSphereCoords(geometry_msgs::PointStamped p) {
-            return toSphereCoords(cv::Point3f(p.point.x, p.point.y, p.point.z));
+        Point2f toSphereCoords(geometry_msgs::PointStamped p) {
+            Point3f temp;
+            temp.x = p.point.x;
+            temp.y = p.point.y;
+            temp.z = p.point.z;
+            
+            return toSphereCoords(temp);
         }
 
-        cv::Point2f toSphereCoords(cv::Point3f pt) {
-            cv::Point2f pantilt;
-            cv::Point3f p;
+        Point2f toSphereCoords(Point3f pt) {
+            Point2f pantilt;
+            Point3f p;
             p.x = -pt.y;
             p.y = -pt.x;
             p.z = -pt.z;
@@ -156,7 +167,7 @@ public:
                 fobPoint.point.z = fob_pose_right.position.z;
             }
             tf.transformPoint(ptuPoint.header.frame_id, fobPoint, ptuPoint);
-            cv::Point2f pantiltTarget = toSphereCoords(ptuPoint);
+            Point2f pantiltTarget = toSphereCoords(ptuPoint);
             rotPTUAbsolute(pantiltTarget.x, pantiltTarget.y);
 
         }
