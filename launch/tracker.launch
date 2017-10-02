@@ -2,7 +2,7 @@
    <env name="ROSCONSOLE_CONFIG_FILE" value="$(find asr_flock_of_birds_tracking)/launch/rosconsole.config"/>
 
    <node name = "ptu_tracker" pkg = "asr_flock_of_birds_tracking" type = "asr_flock_of_birds_tracking" output = "screen">
-    <rosparam file = "$(find asr_flock_of_birds_tracking)/launch/tracker_settings.yaml"/>
+    <rosparam file = "$(find asr_flock_of_birds_tracking)/param/tracker_settings.yaml"/>
   </node>
  
 </launch>
