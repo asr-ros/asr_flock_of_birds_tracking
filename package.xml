@@ -2,7 +2,7 @@
 <package>
 	<name>asr_flock_of_birds_tracking</name>
 	<version>1.0.0</version>
-	<description>This package provides a tool which tracks the motion of the Flock of Birds data glove and moves the PTU to follow it. With this tool, the data glove is always in the middle of the camera view and the manipulations of objects can be tracked easily.</description>
+	<description>This package controls a motorized robot head (a sensor setup equipped with a PTU) in order to ensure that the hand of a human user remains inside its field of view. The human hand is tracked with the help of an Ascension - Flock of Birds system. The purpose of this package is to enable continuous localization of objects during their manipulation through the tracked hand.</description>
         
 	<author>Engelmann Stephan, Heller Florian, Meißner Pascal, Stöckle Patrick, Wittenbeck Valerij</author>
 	<maintainer email="asr-ros@lists.kit.edu">Meißner Pascal</maintainer>
